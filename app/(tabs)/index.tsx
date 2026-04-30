@@ -8,6 +8,19 @@ import { ThemedView } from '@/components/themed-view';
 import { Link } from 'expo-router';
 
 export default function HomeScreen() {
+  
+  const myName = "Matthew";
+
+const createGreeting = (name: string) => {
+  return `Hey ${name}, welcome to my app! - from ${myName}`;
+};
+
+const classmates = ["Ana", "Ben", "Carlo", "Diane", "Ethan"];
+
+const greetingsList = classmates.map(person => createGreeting(person));
+
+console.log(greetingsList);
+
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
