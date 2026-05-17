@@ -4,7 +4,7 @@ export default function HomeScreen() {
   return (
     <View style={styles.container}>
       <Image
-        source={{ uri: 'https://picsum.photos/200' }}
+        source={require('../../assets/images/matt.jpeg')}
         style={styles.photo}
       />
 
