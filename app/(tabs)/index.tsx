@@ -1,55 +1,59 @@
-import { useState } from 'react';
-import { View, Text, TextInput, Image, StyleSheet } from 'react-native';
+import { View, Text, Image, StyleSheet } from 'react-native';
 
 export default function HomeScreen() {
-  const [name, setName] = useState('');
-
   return (
-    <View style={styles.screen}>
+    <View style={styles.container}>
       <Image
         source={{ uri: 'https://picsum.photos/200' }}
         style={styles.photo}
       />
 
-      <TextInput
-        placeholder="Type your name..."
-        value={name}
-        onChangeText={setName}
-        style={styles.input}
-      />
+      <Text style={styles.name}>Matthew Rafael Dagoc</Text>
+      <Text style={styles.course}>BMMA Student</Text>
 
-      <Text style={styles.greeting}>
-        Hello, {name}!
+      <Text style={styles.bio}>
+        I am a multimedia arts student who enjoys exploring design, creativity,
+        visual storytelling, and rdigital media. I aim to improve my skills in
+        creating meaningful and visually engaging outputs.
       </Text>
     </View>
   );
 }
 
+// I created a profile card screen with my photo, name, course, and short bio.
+// Date of change: May 17, 2026
+
 const styles = StyleSheet.create({
-  screen: {
+  container: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    padding: 24,
     backgroundColor: '#f4f4f4',
   },
   photo: {
-    width: 120,
-    height: 120,
-    borderRadius: 60,
-    marginBottom: 18,
+    width: 140,
+    height: 140,
+    borderRadius: 70,
+    marginBottom: 20,
   },
-  input: {
-    width: 220,
-    height: 45,
-    borderWidth: 1,
-    borderColor: '#888',
-    borderRadius: 8,
-    paddingHorizontal: 12,
-    marginBottom: 18,
-    backgroundColor: '#fff',
-  },
-  greeting: {
-    fontSize: 24,
+  name: {
+    fontSize: 26,
     fontWeight: 'bold',
+    marginBottom: 6,
+    textAlign: 'center',
+  },
+  course: {
+    fontSize: 18,
+    marginBottom: 16,
+    color: '#555',
+    textAlign: 'center',
+  },
+  bio: {
+    fontSize: 15,
+    color: '#333',
+    textAlign: 'center',
+    lineHeight: 22,
+    maxWidth: 320,
   },
 });
